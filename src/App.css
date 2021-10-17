@@ -1,38 +1,317 @@
-.App {
-  text-align: center;
+::selection{
+    color: white;
+    background: #000;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
   }
-  to {
-    transform: rotate(360deg);
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
   }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+h6,p{
+    margin: 0ch;
+    padding: 0ch;
 }
+body{
+    margin: 0% ;
+}
+.App{
+    padding-top: 90px;
+}
+
+  
+
+.navBar a{
+    text-decoration: none;
+    color: black;
+}
+.navBar{
+    transition: top 0.2s  ;
+    height: 70px;
+    position:fixed;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    background: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family:nyt-cheltenham-cond,nyt-cheltenham,georgia,'times new roman',times,serif ;
+    font-size: 150%;
+    letter-spacing: 10px;
+    text-shadow: 2px 2px 4px #ccc9c9;
+    z-index: 10;
+}
+.hidden {
+    top: -70px;
+  }
+#main{
+display: flex;
+flex-direction: column;
+margin-bottom: 40px;
+}
+#showMore{
+display: flex;
+align-items: center;
+justify-content: center;
+color: black;
+background:#fff;
+border: 3px solid black;
+border-radius: 50px;
+padding:1% 2%;
+margin: 60px 2% 2% 2%;
+letter-spacing: 1.4px;
+font-weight: 600;
+align-self: center;
+}
+#showMore:hover{
+    cursor: pointer;
+    background: black;
+    color: #fff;
+}
+.list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,235px);
+    justify-content: center;
+    width: 100%;
+
+}
+.list_with_title{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: auto;
+    width: 80%;
+    border-bottom: 0.1px solid rgb(196, 190, 190);
+}
+.loader{
+    align-self: center;
+}
+.affiliate{
+    align-self: center;
+    margin: 25px 0 10px 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+.list_with_title > h1{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+}
+.list_with_title > h1 > a{
+    text-decoration: none;
+    color: black;
+}
+.list_with_title > h1 > a:hover{
+    text-decoration: underline;
+}
+.book_image{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 4%;
+}
+
+.book_image > p,.BookInListPage > .BookInfo > .rank{
+   font-size: 25px;
+   color: rgb(107, 102, 102);
+   font-family:nyt-cheltenham-cond,nyt-cheltenham,georgia,'times new roman',times,serif;
+   position: absolute;
+   top: 0%;
+   left: 0%;
+   margin: 0%;
+   letter-spacing: -2px;
+   text-align: center;
+}
+
+.book{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-left: 0.1px solid rgb(196, 190, 190);
+    padding:2% 4% ;
+    position: relative;
+}
+.list :nth-child(1){
+    border-left:none;
+}
+.book > p,.BookInfo>p{
+    font-family: nyt-imperial,georgia,'times new roman',times,serif;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+}
+.book > .description,.BookInfo > .description{
+    padding-top: 8px;
+    padding-bottom: 5px;
+    color: #333;
+}
+.book > h6,.BookInfo > h6{
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.book > button,.BookInListPage button{
+ margin-top: auto;
+ margin-right:5px;
+ color: white;
+ font-size: 10px;
+ font-weight: 500;
+ letter-spacing: 1px;
+ background:#567b95;
+ border: 1px solid rgb(58, 91, 114);
+ border-radius: 2px;
+ padding: 2%;
+ display: flex;
+ align-items: center;
+ justify-content: space-evenly;
+width: 70px;
+height: 30px;
+}
+.book > button > span,.BookInListPage button > span{
+    pointer-events: none;
+}
+.book > button:hover,.BookInListPage button:hover{
+    cursor: pointer;
+    background:#456277;
+}
+.book > ul,.BookInListPage ul {
+    background-color: #fff;
+    border: 1px solid #999;
+    border-radius: 4px;
+    font-family: nyt-franklin,helvetica,arial,sans-serif;
+    box-shadow: 2px 2px 2px #ccc;
+    left: 10px;
+    margin-top: 12px;
+    position: absolute;
+    bottom:-195px;
+    white-space: nowrap;
+    width: auto;
+    z-index: 10;
+    padding: 10px 10px 10px 8px;
+    list-style: none;
+    display: none;
+}
+.BookInListPage ul{
+    left: 0px;
+}
+.book > ul >li,.BookInListPage ul > li {
+    padding: 3% 2% 3% 0;
+    display: flex;
+    align-items: center;
+}
+.book> ul > li >a,.BookInListPage ul > li > a{
+    text-decoration: none ;
+    font-size: 15px;
+    color:#456277
+}
+.book> ul > li >a:hover,.BookInListPage ul > li > a:hover{
+    text-decoration: underline;
+    color: #567b95;
+}
+.book > ul :before,.BookInListPage  ul :before {
+    content: "";
+    position:absolute;
+    margin-top:-18px;
+    margin-left:-5px;
+    border-left: 8px solid #fff;
+    border-right: 8px solid #fff;
+    border-bottom: 8px solid #999;
+    transform:rotate(0deg);
+    left: 25px; 
+    top: 9.5px;
+    z-index: 9;
+  }
+  .book > ul :after,.BookInListPage ul :after {
+    content: "";
+    position:absolute;
+    margin-top:-18px;
+    margin-left:-5px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #fff;
+    transform:rotate(0deg);
+    left: 25px; 
+    top:11px;
+    z-index: 10;
+  }
+
+  .BookInListPage{
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      width: 100%;
+      padding: 0% 2% 2% 2%;
+      margin-top: 1%;
+      border-bottom: 0.1px solid rgb(196, 190, 190);
+    }
+    
+   .BookInListPage > .BookInfo{
+       display: flex;
+       flex-direction: column;
+       height: 100%;
+       margin-left: 10px;
+    }
+    .BookInListPage > .BookInfo > .btnDiv{
+        display: flex;
+        position: relative;
+        align-items: center;
+    } 
+    .BookInListPage > .BookInfo > .btnDiv > a{
+       text-decoration: none;
+       font-family: nyt-franklin,helvetica,arial,sans-serif;
+       font-weight: lighter;
+       font-size: 14px;
+       color: #456277;
+    } 
+    .BookInListPage > .BookInfo > .btnDiv > a:hover{
+        color: #567b95;
+        text-decoration: underline;
+    }
+    .listPage{
+        width: 55%;
+        margin: auto;
+        margin-bottom: 70px;
+    }
+    .listPage > div{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 30px;
+    }
+    .listPage > h1{
+        font-family: nyt-cheltenham,georgia,'times new roman',times,serif;
+        font-weight: 400;
+        letter-spacing: 1px;
+        margin: 0%;
+        border-bottom: 0.2px solid rgb(185, 184, 184);
+    }
+
+    #footer{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 200px;
+        background: #000;
+        color:#fff;
+        margin-top: auto;
+        width: 100%;
+        padding-bottom: 10px;
+        font-family: nyt-franklin,helvetica,arial,sans-serif;
+        font-size: 12px;
+        letter-spacing: 2px;
+        word-spacing: 4px;
+    }
